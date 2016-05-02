@@ -11,7 +11,7 @@ import (
 	"log"
 )
 
-func sayhelloName(writer http.ResponseWriter, request *http.Request) {
+func sayhelloWorld(writer http.ResponseWriter, request *http.Request) {
 
 	// parse request / urlencoded arguments (must be called manually)
 	request.ParseForm()
@@ -40,7 +40,7 @@ func sayhelloName(writer http.ResponseWriter, request *http.Request) {
 func main() {
 
 	// set router for root url requests
-	http.HandleFunc("/", sayhelloName)
+	http.HandleFunc("/", sayhelloWorld)
 	err := http.ListenAndServe(":9000", nil)
 
 	if err != nil {
